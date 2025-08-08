@@ -39,10 +39,10 @@
 			$(
 				'<div id="titleBar">' +
 					'<a href="#navPanel" class="toggle"></a>' +
-					'<span class="title">' + $('#logo').html() + '</span>' +
+					'<span class="title">日盛車坊</span>' +
 				'</div>'
 			)
-				.appendTo($body);
+			.appendTo($body);
 
 		// Panel.
 			$(
