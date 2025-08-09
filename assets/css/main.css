@@ -1916,9 +1916,9 @@ input, select, textarea {
 	}
 
 /* Wrappers */
-
+	/*, url("../../images/header.jpg");*/
 	#header-wrapper {
-		background: url("images/bg01.png"), url("../../images/header.jpg");
+		background: url("images/bg01.png")
 		background-position: top left, center center;
 		background-size: auto, cover;
 		padding: 3em 0;
