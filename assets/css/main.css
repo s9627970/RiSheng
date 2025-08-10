@@ -73,23 +73,23 @@ input, select, textarea {
 }
 
 /* Basic */
-
 	.fb-post-wrapper {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: 10px;
+		flex-wrap: nowrap;
 	}
 
 	.fb-post-container {
 		display: flex;
 		overflow-x: hidden;
 		scroll-behavior: smooth;
-		width: 1620px; /* 800px × 2 + 20px 間距 */
+		width: 1620px; /* 桌面版顯示 2 篇 (800px × 2 + 間距) */
 	}
 
 	.fb-post {
-		flex: 0 0 50%; /* 每次顯示兩篇，佔一半 */
+		flex: 0 0 50%; /* 桌面版每篇佔一半寬度 */
 		display: flex;
 		justify-content: center;
 	}
@@ -103,37 +103,22 @@ input, select, textarea {
 		padding: 5px 10px;
 	}
 
-
-
-	.fb-wrapper {
-		display: flex;
-		justify-content: center; /* 水平置中整個 fb-grid */
-		margin-top: 20px;
-	}
-	
-	.fb-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr); /* 兩欄 */
-		gap: 30px; /* 貼文間距 */
-		max-width: 1100px;
-	}
-	
-	.fb-grid iframe {
-		width: 500px;
-		height: 435px;
-		border: none;
-		overflow: hidden;
-		display: block;
-	}
-  
+	/* 手機版調整 */
 	@media (max-width: 768px) {
-		.fb-grid {
-		  grid-template-columns: 1fr;
+		.fb-post-container {
+			width: 100%; /* 滿版 */
 		}
-		.fb-grid iframe {
-		  width: 100%;
+
+		.fb-post {
+			flex: 0 0 100%; /* 一次顯示 1 篇 */
 		}
-	  }
+
+		.fb-post iframe {
+			width: 100% !important; /* 讓 iframe 滿版 */
+			height: 500px; /* 高度可自行調整 */
+		}
+	}
+
 	  
 
 	html {
