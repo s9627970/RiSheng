@@ -74,6 +74,37 @@ input, select, textarea {
 
 /* Basic */
 
+	.fb-post-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+	}
+
+	.fb-post-container {
+		display: flex;
+		overflow-x: hidden;
+		scroll-behavior: smooth;
+		width: 1620px; /* 800px × 2 + 20px 間距 */
+	}
+
+	.fb-post {
+		flex: 0 0 50%; /* 每次顯示兩篇，佔一半 */
+		display: flex;
+		justify-content: center;
+	}
+
+	.scroll-btn {
+		background: rgba(0,0,0,0.5);
+		color: white;
+		border: none;
+		font-size: 2em;
+		cursor: pointer;
+		padding: 5px 10px;
+	}
+
+
+
 	.fb-wrapper {
 		display: flex;
 		justify-content: center; /* 水平置中整個 fb-grid */
