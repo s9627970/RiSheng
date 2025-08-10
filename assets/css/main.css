@@ -83,9 +83,8 @@ input, select, textarea {
 
 	.fb-post-container {
 		display: flex;
-		overflow-x: hidden;
+		overflow-x: auto;
 		scroll-behavior: smooth;
-		width: 1620px; /* 桌面版顯示 2 篇 (800px × 2 + 間距) */
 	}
 
 	.fb-post {
