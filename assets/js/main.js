@@ -65,34 +65,7 @@
 				});
 
 
-				let currentIndex = 0;
 
-				function scrollFBPosts(direction) {
-					const container = document.querySelector('.fb-post-container');
-					const posts = document.querySelectorAll('.fb-post');
-				
-					const isMobile = window.innerWidth <= 768;
-					const postsPerView = isMobile ? 1 : 2;
-				
-					const totalPosts = posts.length;
-					const maxIndex = Math.max(0, totalPosts - postsPerView); // 最大起始index
-				
-					currentIndex = currentIndex + direction;
-				
-					if (currentIndex < 0) currentIndex = 0;
-					if (currentIndex > maxIndex) currentIndex = maxIndex;
-				
-					const postWidth = posts[0].offsetWidth;
-				
-					const scrollAmount = postWidth * currentIndex;
-				
-					container.scrollTo({
-						left: scrollAmount,
-						behavior: 'smooth'
-					});
-				}
-				
-				
 
 
 })(jQuery);
