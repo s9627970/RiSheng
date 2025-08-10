@@ -73,17 +73,25 @@
 				
 					const isMobile = window.innerWidth <= 768;
 					const postsPerView = isMobile ? 1 : 2;
-					const totalGroups = Math.ceil(posts.length / postsPerView);
 				
-					currentIndex = (currentIndex + direction + totalGroups) % totalGroups;
+					const totalPosts = posts.length;
+					const maxIndex = Math.max(0, totalPosts - postsPerView); // 最大起始index
 				
-					const scrollAmount = container.clientWidth * currentIndex;
+					currentIndex = currentIndex + direction;
+				
+					if (currentIndex < 0) currentIndex = 0;
+					if (currentIndex > maxIndex) currentIndex = maxIndex;
+				
+					const postWidth = posts[0].offsetWidth;
+				
+					const scrollAmount = postWidth * currentIndex;
 				
 					container.scrollTo({
 						left: scrollAmount,
 						behavior: 'smooth'
 					});
 				}
+				
 				
 
 
