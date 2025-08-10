@@ -64,4 +64,6 @@
 					visibleClass: 'navPanel-visible'
 				});
 
+
 })(jQuery);
+
