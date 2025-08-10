@@ -106,16 +106,16 @@ input, select, textarea {
 	/* 手機版調整 */
 	@media (max-width: 768px) {
 		.fb-post-container {
-			width: 100%; /* 滿版 */
+			width: 100%;
 		}
-
+	
 		.fb-post {
-			flex: 0 0 100%; /* 一次顯示 1 篇 */
+			flex: 0 0 100%; /* 一次一篇 */
 		}
-
+	
 		.fb-post iframe {
-			width: 100% !important; /* 讓 iframe 滿版 */
-			height: 500px; /* 高度可自行調整 */
+			width: 100% !important;
+			height: 500px;
 		}
 	}
 
