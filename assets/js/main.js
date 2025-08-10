@@ -72,16 +72,18 @@
 					const posts = document.querySelectorAll('.fb-post');
 
 					const isMobile = window.innerWidth <= 768;
-					const postsPerView = isMobile ? 1 : 2; // 手機顯示 1 篇，桌面 2 篇
+					const postsPerView = isMobile ? 1 : 2; // 手機一次 1 篇，桌面一次 2 篇
+					const postWidth = posts[0].offsetWidth; // 單篇實際寬度
 					const totalGroups = Math.ceil(posts.length / postsPerView);
 
 					currentIndex = (currentIndex + direction + totalGroups) % totalGroups;
 
 					container.scrollTo({
-						left: container.clientWidth * currentIndex,
+						left: postWidth * postsPerView * currentIndex,
 						behavior: 'smooth'
 					});
 				}
+
 
 })(jQuery);
 
