@@ -185,16 +185,22 @@
 			<script>
 				let currentIndex = 0;
 				function scrollFBPosts(direction) {
-					const container = document.getElementById('fbPostContainer');
-					const posts = document.querySelectorAll('.fb-post');
-					const totalGroups = Math.ceil(posts.length / 2); // 兩篇為一組
+				const container = document.getElementById('fbPostContainer');
+				const posts = document.querySelectorAll('.fb-post');
 
-					currentIndex = (currentIndex + direction + totalGroups) % totalGroups;
-					container.scrollTo({
-						left: container.clientWidth * currentIndex,
-						behavior: 'smooth'
-					});
-				}
+				const isMobile = window.innerWidth <= 768;
+				const postsPerView = isMobile ? 1 : 2; // 手機版一次顯示1篇，桌面版2篇
+
+				const totalGroups = Math.ceil(posts.length / postsPerView);
+
+				currentIndex = (currentIndex + direction + totalGroups) % totalGroups;
+
+				container.scrollTo({
+					left: container.clientWidth * currentIndex,
+					behavior: 'smooth'
+				});
+			}
+
 			</script>
 
 	</body>
