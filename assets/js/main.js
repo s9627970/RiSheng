@@ -65,5 +65,23 @@
 				});
 
 
+				let currentIndex = 0;
+
+				function scrollFBPosts(direction) {
+					const container = document.getElementById('fbPostContainer');
+					const posts = document.querySelectorAll('.fb-post');
+
+					const isMobile = window.innerWidth <= 768;
+					const postsPerView = isMobile ? 1 : 2; // 手機顯示 1 篇，桌面 2 篇
+					const totalGroups = Math.ceil(posts.length / postsPerView);
+
+					currentIndex = (currentIndex + direction + totalGroups) % totalGroups;
+
+					container.scrollTo({
+						left: container.clientWidth * currentIndex,
+						behavior: 'smooth'
+					});
+				}
+
 })(jQuery);
 
