@@ -68,21 +68,23 @@
 				let currentIndex = 0;
 
 				function scrollFBPosts(direction) {
-					const container = document.getElementById('fbPostContainer');
+					const container = document.querySelector('.fb-post-container');
 					const posts = document.querySelectorAll('.fb-post');
-
+				
 					const isMobile = window.innerWidth <= 768;
-					const postsPerView = isMobile ? 1 : 2; // 手機一次 1 篇，桌面一次 2 篇
-					const postWidth = posts[0].offsetWidth; // 單篇實際寬度
+					const postsPerView = isMobile ? 1 : 2;
 					const totalGroups = Math.ceil(posts.length / postsPerView);
-
+				
 					currentIndex = (currentIndex + direction + totalGroups) % totalGroups;
-
+				
+					const scrollAmount = container.clientWidth * currentIndex;
+				
 					container.scrollTo({
-						left: postWidth * postsPerView * currentIndex,
+						left: scrollAmount,
 						behavior: 'smooth'
 					});
 				}
+				
 
 
 })(jQuery);
